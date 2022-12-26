@@ -21,6 +21,7 @@ public class InvoiceSalesFrame extends javax.swing.JFrame {
      * Creates new form InvoiceFrame
      */
     public InvoiceSalesFrame() {
+        this.selectionListener = new TableSelectionListener(this);
         initComponents();
     }
 
@@ -241,12 +242,12 @@ public class InvoiceSalesFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem loadMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
-    private InvoiceSalesActionListener actionListener = new InvoiceSalesActionListener(this);
+    public  InvoiceSalesActionListener actionListener = new InvoiceSalesActionListener(this);
     private ArrayList<InvoiceSalesHeaderSales> invoicesArray;
     private ArrayList<InvoicSaleseLine> linesArray;
     private InvoiceSalesHeaderTableModel headerTableModel;
     public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-    private TableSelectionListener selectionListener = new TableSelectionListener(this);
+    public TableSelectionListener selectionListener;
 
     public ArrayList<InvoicSaleseLine> getLinesArray() {
         return linesArray;
